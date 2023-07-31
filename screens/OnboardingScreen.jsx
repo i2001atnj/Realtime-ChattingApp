@@ -32,16 +32,15 @@ export default function OnboardingScreen({navigation}) {
         <Image source={require('../assets/divider.png')} style={{width: '40%'}}/>
       </View>
       <View style={{width: '100%', paddingHorizontal: '6%'}}>
-        <TouchableOpacity style={styles.SignUpWithMailButton} onPress={() => navigation.navigate()}>
+        <TouchableOpacity style={styles.SignUpWithMailButton} onPress={() => navigation.navigate('SignUpScreen')}>
           <Text style={{fontSize: 16, fontWeight: 500, color: '#000000'}}>SIGN UP WITH MAIL</Text>
         </TouchableOpacity>
       </View>
-      <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <Text style={{color: '#B9C1BE'}}>Existing account?
-          <TouchableOpacity style={{justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{color: '#FFFFFF'}}>Log in</Text>
-          </TouchableOpacity>
-          </Text>
+      <View style={{flexDirection: 'row'}}>
+        <Text style={{color: '#B9C1BE'}}>Existing account?</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')} style={{justifyContent: 'center', alignItems: 'center'}}>
+          <Text style={{color: '#FFFFFF', marginLeft: 10}}>Log in</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   )
