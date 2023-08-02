@@ -1,22 +1,22 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import React from 'react'
 
-export default function Searchbar() {
+export default function Header() {
   return (
-    <View style={styles.Searchbar}>
+    <View style={styles.Header}>
         <TouchableOpacity style={styles.SearchButton}>
             <Image source={require('../../assets/searchVector.png')}/>
         </TouchableOpacity>
         <Text style={{color: '#FFFFFF', fontSize: 20, fontWeight: 500}}>Home</Text>
-        <TouchableOpacity>
-            <Image source={require('../../assets/profilePhoto.png')} style={{height: 40, width: 40}}/>
+        <TouchableOpacity style={{borderWidth: 1, borderRadius: 50, borderColor: '#0A1832'}}>
+            <Image source={require('../../assets/profilePhoto.png')} style={{height: 40, width: 40, borderRadius: 50}}/>
         </TouchableOpacity>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-    Searchbar: {
+    Header: {
         flexDirection: 'row',
         justifyContent:'space-between',
         alignItems: 'center',
