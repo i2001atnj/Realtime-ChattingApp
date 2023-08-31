@@ -7,10 +7,12 @@ import {
   Image,
 } from "react-native";
 import { CHATS } from "../../data/chats";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Chats() {
   let onlineStatus = require("../../assets/online.png");
   let offlineStatus = require("../../assets/offline.png");
+  const navigation = useNavigation();
   return (
     <View style={styles.Chats}>
       <TouchableOpacity style={styles.ChatsHeader}>
@@ -21,7 +23,20 @@ export default function Chats() {
       </TouchableOpacity>
       <ScrollView>
         {CHATS.map((chat) => (
-          <TouchableOpacity key={chat.id} style={styles.Chat}>
+          <TouchableOpacity
+            key={chat.id}
+            style={styles.Chat}
+            onPress={() =>
+              navigation.navigate("ChatScreen", {
+                contactName: chat.contactName,
+                contactPhoto: chat.contactPhoto,
+                lastMessage: chat.lastMessage,
+                lastMessageDate: chat.lastMessageDate,
+                online: chat.online,
+                id: chat.id,
+              })
+            }
+          >
             <View
               style={{
                 flexDirection: "row",

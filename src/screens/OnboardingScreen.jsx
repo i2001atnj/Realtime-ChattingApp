@@ -7,10 +7,23 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
+import LoginOption from "../components/LoginOption";
+import Separator from "../components/Separator";
+import { StatusBar } from "expo-status-bar";
 
 export default function OnboardingScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.OnboardingScreen}>
+      <StatusBar style="light" />
+      <Image
+        source={require("../assets/ellipse.png")}
+        style={{
+          resizeMode: "contain",
+          height: 644,
+          width: "100%",
+          position: "absolute",
+        }}
+      />
       <View style={styles.Header}>
         <Image source={require("../assets/logo.png")} />
         <Text style={{ color: "#FFFFFF", fontSize: 16, fontWeight: "bold" }}>
@@ -20,10 +33,10 @@ export default function OnboardingScreen({ navigation }) {
       <View style={{ paddingHorizontal: "6%" }}>
         <Text style={{ fontSize: 68, color: "#FFFFFF" }}>Connect</Text>
         <Text style={{ fontSize: 68, color: "#FFFFFF" }}>friends</Text>
-        <Text style={{ fontSize: 68, color: "#FFFFFF", fontWeight: "600" }}>
+        <Text style={{ fontSize: 68, color: "#FFFFFF", fontWeight: 600 }}>
           easily &
         </Text>
-        <Text style={{ fontSize: 68, color: "#FFFFFF", fontWeight: "600" }}>
+        <Text style={{ fontSize: 68, color: "#FFFFFF", fontWeight: 600 }}>
           quick
         </Text>
         <Text
@@ -39,38 +52,20 @@ export default function OnboardingScreen({ navigation }) {
         </Text>
       </View>
       <View style={{ flexDirection: "row", gap: 22 }}>
-        <TouchableOpacity style={styles.RoundedButton}>
-          <Image source={require("../assets/facebookLogo.png")} />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.RoundedButton}>
-          <Image source={require("../assets/googleLogo.png")} />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.RoundedButton}>
-          <Image source={require("../assets/appleLogo.png")} />
-        </TouchableOpacity>
-      </View>
-      <View
-        style={{
-          flexDirection: "row",
-          gap: 15,
-          width: "100%",
-          paddingHorizontal: "6%",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Image
-          source={require("../assets/divider.png")}
-          style={{ width: "40%" }}
+        <LoginOption
+          style={{ borderColor: "#A8B0AF" }}
+          image={require("../assets/facebookLogo.png")}
         />
-        <Text style={{ fontSize: 15, fontWeight: 500, color: "#D6E4E0" }}>
-          OR
-        </Text>
-        <Image
-          source={require("../assets/divider.png")}
-          style={{ width: "40%" }}
+        <LoginOption
+          style={{ borderColor: "#A8B0AF" }}
+          image={require("../assets/googleLogo.png")}
+        />
+        <LoginOption
+          style={{ borderColor: "#A8B0AF" }}
+          image={require("../assets/appleLogoWhite.png")}
         />
       </View>
+      <Separator />
       <View style={{ width: "100%", paddingHorizontal: "6%" }}>
         <TouchableOpacity
           style={styles.SignUpWithMailButton}
@@ -98,7 +93,7 @@ const styles = StyleSheet.create({
   OnboardingScreen: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#0A1832",
+    backgroundColor: "#1A1A1A",
     gap: "45%",
   },
   Header: {
@@ -108,16 +103,6 @@ const styles = StyleSheet.create({
     gap: 6,
     width: "100%",
     paddingHorizontal: "6%",
-  },
-  RoundedButton: {
-    backgroundColor: "#000000",
-    borderColor: "#A8B0AF",
-    borderWidth: 1,
-    borderRadius: 100,
-    width: 48,
-    height: 48,
-    justifyContent: "center",
-    alignItems: "center",
   },
   SignUpWithMailButton: {
     backgroundColor: "#FFFFFF",
