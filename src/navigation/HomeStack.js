@@ -4,7 +4,7 @@ import { Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import {
-  MessagesScreen,
+  ChatsScreen,
   CallsScreen,
   ContactsScreen,
   SettingsScreen,
@@ -30,7 +30,7 @@ export default function HomeStack() {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused }) => {
           let tabBarIcon;
-          if (route.name === "Home") {
+          if (route.name === "Chats") {
             tabBarIcon = focused ? MessageIconFocused : MessageIcon;
           }
           if (route.name === "Calls") {
@@ -46,11 +46,11 @@ export default function HomeStack() {
         },
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: "#0A1832",
+          backgroundColor: "#fff",
           borderTopWidth: 0,
           height: 90,
         },
-        tabBarActiveTintColor: "#fff",
+        tabBarActiveTintColor: "#24786D",
         tabBarInactiveTintColor: "gray",
         tabBarLabelStyle: {
           fontSize: 16,
@@ -58,7 +58,7 @@ export default function HomeStack() {
         },
       })}
     >
-      <Tab.Screen name="Home" component={MessagesScreen} />
+      <Tab.Screen name="Chats" component={ChatsScreen} />
       <Tab.Screen name="Calls" component={CallsScreen} />
       <Tab.Screen name="Contacts" component={ContactsScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />

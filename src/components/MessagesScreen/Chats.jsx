@@ -54,12 +54,12 @@ export default function Chats() {
               </View>
               <View>
                 <Text
-                  style={{ color: "#FFFFFF", fontWeight: 600, fontSize: 20 }}
+                  style={{ color: "#000E08", fontWeight: 600, fontSize: 20 }}
                 >
                   {chat.contactName}
                 </Text>
                 <Text
-                  style={{ color: "#b8b8b8", fontWeight: 300, fontSize: 16 }}
+                  style={{ color: "#797C7B", fontWeight: 300, fontSize: 16 }}
                 >
                   {chat.lastMessage}
                 </Text>
@@ -86,7 +86,7 @@ export default function Chats() {
 
 const styles = StyleSheet.create({
   Chats: {
-    backgroundColor: "#0A1832",
+    backgroundColor: "#fff",
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
     flex: 1,
