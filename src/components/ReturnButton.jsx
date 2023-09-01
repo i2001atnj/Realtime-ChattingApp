@@ -5,7 +5,12 @@ import { useNavigation } from "@react-navigation/native";
 const ReturnButton = () => {
   const navigation = useNavigation();
   return (
-    <View style={{ width: "100%", paddingHorizontal: "6%" }}>
+    <View
+      style={{
+        paddingHorizontal: "6%",
+        justifyContent: "center",
+      }}
+    >
       <TouchableOpacity onPress={() => navigation.goBack()}>
         <Image source={require("../assets/back.png")} />
       </TouchableOpacity>
