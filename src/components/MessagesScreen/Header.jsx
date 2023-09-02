@@ -11,7 +11,7 @@ export default function Header() {
         Chats
       </Text>
       <TouchableOpacity
-        style={{ borderWidth: 1, borderRadius: 50, borderColor: "#363F3B" }}
+        style={{ borderWidth: 1, borderRadius: 50, borderColor: "#7eb49b" }}
       >
         <Image
           source={require("../../assets/profilePhoto.png")}
@@ -38,6 +38,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 50,
     borderWidth: 1,
-    borderColor: "#363F3B",
+    borderColor: "#7eb49b",
   },
 });

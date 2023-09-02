@@ -5,6 +5,16 @@ import { CONTACTS } from "../../data/contacts.js";
 export default function Stories() {
   return (
     <View style={{ gap: 20 }}>
+      <Text
+        style={{
+          color: "#fff",
+          fontSize: 16,
+          fontWeight: 600,
+          marginLeft: "5%",
+        }}
+      >
+        Stories
+      </Text>
       <ScrollView
         horizontal
         style={{ width: "100%" }}

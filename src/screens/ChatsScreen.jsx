@@ -17,7 +17,7 @@ export default function ChatsScreen() {
 const styles = StyleSheet.create({
   ChatsScreen: {
     flex: 1,
-    backgroundColor: "#2b756b",
+    backgroundColor: "#24786d",
     width: "100%",
     gap: "35%",
   },
