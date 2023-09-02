@@ -10,7 +10,9 @@ export default function SignUpScreen() {
   return (
     <SafeAreaView style={styles.SignUpScreen}>
       <StatusBar style="auto" />
-      <ReturnButton />
+      <View style={{ width: "100%" }}>
+        <ReturnButton />
+      </View>
       <Title
         titleHeader="Sign up with Email"
         titleDescription="Get chatting with friends and family today by signing up for our chat
@@ -27,6 +29,7 @@ export default function SignUpScreen() {
           text="Create an account"
           backgroundColor="#24786D"
           to="HomeStack"
+          textColor="#fff"
         />
       </View>
     </SafeAreaView>

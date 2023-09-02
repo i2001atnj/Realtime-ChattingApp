@@ -34,6 +34,7 @@ export default function Chats() {
                 lastMessageDate: chat.lastMessageDate,
                 online: chat.online,
                 id: chat.id,
+                read: chat.read,
               })
             }
           >

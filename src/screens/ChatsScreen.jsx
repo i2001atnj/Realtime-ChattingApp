@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, StyleSheet } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 import React from "react";
 import { Header, Stories, Chats } from "../components/components";
 import { StatusBar } from "expo-status-bar";

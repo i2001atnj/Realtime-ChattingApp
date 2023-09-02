@@ -1,12 +1,20 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
 import CallOption from "./CallOption";
+import ReturnButton from "./ReturnButton";
 
 const ChatHeader = ({ image, name, status }) => {
   return (
-    <View style={{ flexDirection: "row", gap: 10 }}>
+    <View
+      style={{
+        flexDirection: "row",
+        paddingBottom: 15,
+        alignItems: "center",
+      }}
+    >
+      <ReturnButton />
       <Image source={image} />
-      <View style={{ justifyContent: "center" }}>
+      <View style={{ justifyContent: "center", marginLeft: 10 }}>
         <Text style={{ fontSize: 16, fontWeight: 500 }}>{name}</Text>
         <Text style={{ fontSize: 12, color: "#797C7B" }}>
           {status ? "Active Now" : "Offline"}

@@ -1,17 +1,12 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
 import React from "react";
 import LoginOption from "../components/LoginOption";
 import Separator from "../components/Separator";
 import { StatusBar } from "expo-status-bar";
+import LogButton from "../components/LogButton";
+import OptionalButton from "../components/OptionalButton";
 
-export default function OnboardingScreen({ navigation }) {
+export default function OnboardingScreen() {
   return (
     <SafeAreaView style={styles.OnboardingScreen}>
       <StatusBar style="light" />
@@ -67,23 +62,21 @@ export default function OnboardingScreen({ navigation }) {
       </View>
       <Separator />
       <View style={{ width: "100%", paddingHorizontal: "6%" }}>
-        <TouchableOpacity
-          style={styles.SignUpWithMailButton}
-          onPress={() => navigation.navigate("SignUpScreen")}
-        >
-          <Text style={{ fontSize: 16, fontWeight: 500, color: "#000000" }}>
-            SIGN UP WITH MAIL
-          </Text>
-        </TouchableOpacity>
+        <LogButton
+          text="SIGN UP WITH MAIL"
+          backgroundColor="#fff"
+          textColor="#000"
+          to="SignUpScreen"
+        />
       </View>
       <View style={{ flexDirection: "row" }}>
         <Text style={{ color: "#B9C1BE" }}>Existing account?</Text>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("LoginScreen")}
-          style={{ justifyContent: "center", alignItems: "center" }}
-        >
-          <Text style={{ color: "#FFFFFF", marginLeft: 10 }}>Log in</Text>
-        </TouchableOpacity>
+        <OptionalButton
+          text="Log in"
+          textColor="#fff"
+          textStyle={{ marginLeft: 10 }}
+          screen="LoginScreen"
+        />
       </View>
     </SafeAreaView>
   );

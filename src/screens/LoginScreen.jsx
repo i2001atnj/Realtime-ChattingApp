@@ -13,7 +13,9 @@ export default function LoginScreen() {
   return (
     <SafeAreaView style={styles.LoginScreen}>
       <StatusBar style="auto" />
-      <ReturnButton />
+      <View style={{ width: "100%" }}>
+        <ReturnButton />
+      </View>
       <Title
         titleHeader="Log in to Chatbox"
         titleDescription="Welcome back! Sign in using your social account or email to continue us"
@@ -36,7 +38,12 @@ export default function LoginScreen() {
           alignItems: "center",
         }}
       >
-        <LogButton text="Log in" backgroundColor="#24786D" to="HomeStack" />
+        <LogButton
+          text="Log in"
+          backgroundColor="#24786D"
+          to="HomeStack"
+          textColor="#fff"
+        />
         <OptionalButton text="Forgot password?" textColor="#24786D" />
       </View>
     </SafeAreaView>

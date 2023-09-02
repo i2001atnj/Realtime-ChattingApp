@@ -2,7 +2,7 @@ import { Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
-const LogButton = ({ text, backgroundColor, to }) => {
+const LogButton = ({ text, backgroundColor, to, textColor }) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
@@ -16,7 +16,7 @@ const LogButton = ({ text, backgroundColor, to }) => {
         borderRadius: 15,
       }}
     >
-      <Text style={{ fontSize: 16, fontWeight: 600, color: "#FFFFFF" }}>
+      <Text style={{ fontSize: 16, fontWeight: 600, color: textColor }}>
         {text}
       </Text>
     </TouchableOpacity>
