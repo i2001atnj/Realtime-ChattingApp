@@ -14,36 +14,60 @@ const ChatScreen = () => {
         name={route.params.contactName}
         status={route.params.online}
       />
-      <ScrollView style={{ height: "100%", backgroundColor: "#dddddd31" }}>
-        {route.params.read ? (
-          <></>
-        ) : (
-          <View>
-            <Text>New Messages</Text>
-          </View>
-        )}
-        <View>
+      <View style={{ height: "100%", backgroundColor: "#f0f0f0" }}>
+        <ScrollView>
+          {route.params.read ? (
+            <></>
+          ) : (
+            <View
+              style={{
+                height: 25,
+                justifyContent: "center",
+                width: "100%",
+                alignItems: "center",
+                backgroundColor: "#a1caf522",
+                marginTop: "2%",
+              }}
+            >
+              <Text style={{ fontWeight: 600 }}>New Messages</Text>
+            </View>
+          )}
           <View
             style={{
-              backgroundColor: "#a1b6c84a",
-              padding: 12,
-              justifyContent: "center",
-              alignItems: "center",
-              marginLeft: 10,
-              borderBottomLeftRadius: 25,
-              borderBottomRightRadius: 25,
-              borderTopRightRadius: 25,
-              marginTop: 10,
               width: 200,
+              alignItems: "flex-start",
+              marginTop: "2%",
             }}
           >
-            <Text style={{ color: "#000" }}>{route.params.lastMessage}</Text>
+            <View
+              style={{
+                backgroundColor: "#a1caf548",
+                padding: 12,
+                justifyContent: "center",
+                alignItems: "center",
+                marginLeft: 10,
+                borderBottomLeftRadius: 25,
+                borderBottomRightRadius: 25,
+                borderTopRightRadius: 25,
+                width: "100%",
+              }}
+            >
+              <Text style={{ color: "#000" }}>{route.params.lastMessage}</Text>
+            </View>
+            <View
+              style={{
+                width: "100%",
+                justifyContent: "flex-end",
+                alignItems: "flex-end",
+              }}
+            >
+              <Text style={{ color: "#797C7B" }}>
+                {route.params.lastMessageDate}
+              </Text>
+            </View>
           </View>
-          <Text style={{ color: "#797C7B" }}>
-            {route.params.lastMessageDate}
-          </Text>
-        </View>
-      </ScrollView>
+        </ScrollView>
+      </View>
     </SafeAreaView>
   );
 };
