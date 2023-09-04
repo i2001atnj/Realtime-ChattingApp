@@ -4,6 +4,7 @@ import { useRoute } from "@react-navigation/native";
 import ChatHeader from "../components/ChatHeader";
 import { StatusBar } from "expo-status-bar";
 import NewMessagesBanner from "../components/NewMessagesBanner";
+import ChatBottomNavBar from "../components/ChatBottomNavBar";
 
 const ChatScreen = () => {
   const route = useRoute();
@@ -16,7 +17,7 @@ const ChatScreen = () => {
         status={route.params.online}
       />
       <View
-        style={{ height: "100%", backgroundColor: "#f5f3e4a8", width: "100%" }}
+        style={{ height: "85%", backgroundColor: "#f5f3e4a8", width: "100%" }}
       >
         <ScrollView>
           {!route.params.read ? <NewMessagesBanner /> : <></>}
@@ -40,6 +41,7 @@ const ChatScreen = () => {
           </View>
         </ScrollView>
       </View>
+      <ChatBottomNavBar />
     </SafeAreaView>
   );
 };
